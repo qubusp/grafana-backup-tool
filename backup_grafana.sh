@@ -17,5 +17,6 @@ do
 	python "${current_path}/src/save_${i}.py" "${F}"
 done
 
-tar -czvf "${backup_dir}/${timestamp}.tar.gz" ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
+tar -czvf "grafana-${timestamp}.tar.gz" ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
+aws s3 cp "grafana-${timestamp}.tar.gz"  s3://${S3_bucket}
 rm -rf ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
