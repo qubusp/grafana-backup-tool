@@ -46,7 +46,7 @@ Replace variables below to use docker version of this tool
 * `{YOUR_GRAFANA_TOKEN}`: Your grafana site token.
 * `{YOUR_GRAFANA_URL}`: Your grafana site url.
 * `{YOUR_BACKUP_FOLDER_ON_THE_HOST}`: The backup folder on the host machine.
-
+* `{S3_URL}`: The S3 URL to upload the backups to 
 ### Backup
 
 ```

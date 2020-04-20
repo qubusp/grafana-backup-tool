@@ -18,5 +18,5 @@ do
 done
 
 tar -czvf "grafana-${timestamp}.tar.gz" ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
-aws s3 cp "grafana-${timestamp}.tar.gz"  s3://${S3_bucket}
+aws s3 mv "grafana-${timestamp}.tar.gz"  s3://$S3_BUCKET/"grafana-${timestamp}.tar.gz"
 rm -rf ${backup_dir}/{dashboards,datasources,folders,alert_channels}/${timestamp}
